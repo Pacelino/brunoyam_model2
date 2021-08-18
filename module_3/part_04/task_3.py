@@ -18,7 +18,8 @@ def login_function(login, password):
        data_acc = json.load(f)
     if login in data_acc.keys() and password in data_acc.values():
         print('вход произведен успешно ')
-
+    else:
+        print('не правильный логин или пароль ')
 login_function(input('login'), input('password'))
 
 
