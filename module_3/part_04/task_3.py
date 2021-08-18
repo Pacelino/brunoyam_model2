@@ -20,6 +20,6 @@ def login_function(login, password):
         print('вход произведен успешно ')
     else:
         print('не правильный логин или пароль ')
-login_function(input('login'), input('password'))
+login_function(input('введите свой login'), input('введите свой password'))
 
 
