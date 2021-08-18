@@ -1,7 +1,5 @@
 import json
-
 data_acc = dict()
-
 def register(login, password):
     with open('data_acc.json', 'r') as f:
        data_acc = json.load(f)
@@ -15,7 +13,12 @@ def register(login, password):
            print('already exist')
 
 
+def login_function(login, password):
+    with open('data_acc.json', 'r') as f:
+       data_acc = json.load(f)
+    if login in data_acc.keys() and password in data_acc.values():
+        print('вход произведен успешно ')
+
+login_function(input('login'), input('password'))
 
 
-
-register(input('Введите свой логин для регистрации'), input('введите свой пароль'))
