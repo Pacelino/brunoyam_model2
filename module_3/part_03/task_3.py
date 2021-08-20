@@ -1,32 +1,17 @@
-num = [56, 9, 11, 2]
-sort_num = sorted(num, reverse=True)
-num1 = []
 
-def f_key_sort(x):
-    xf = float(x)
-
-    while (xf // 10) > 0:
-        xf /= 10
-
-    return xf
+list_ = list(input('введите свой список чисел через пробел'))
 
 
-def num_max(l):
-    l.sort(key=f_key_sort, reverse=True)
+def func(list):
+        x = ''.join(list_)
 
-    rs = ''
-
-    for elem in l:
-        rs += str(elem)
-
-    return int(rs)
+        x = sorted(x, reverse=True)
+        print(x)
+        finel_str = ''.join(x)
+        return print(finel_str)
 
 
-print('Введите список чисел через пробел: ')
-
-input_list = [int(x) for x in input().split()]
-
-print(num_max(input_list))
+func(list_)
 
 
 
