@@ -7,7 +7,7 @@ def bin_search(num_list, search_number):
     start = 0
     stop = len(num_list) - 1
     if search_number == num_list[0]:
-        return num_list.index(search_number)
+        return 0
     while start <= stop:
         middle = (start + stop) // 2  # ищем середину нашего списка
         if search_number == num_list[middle]:  # eсли искомое число равно середине, то выводим середину
