@@ -11,7 +11,6 @@ class Model:
         list_attr = list(filter(lambda x: not x.startswith('_'), dir(Model)))
         list_attr.remove('save')
         for i in list_attr:
-            print(i)
             d[i] = eval('self.' + i)
 
         with open('task1.json', 'w') as f:
