@@ -1,12 +1,12 @@
 import time
 import requests
 from threading import Thread
-more_link = ['https://httpbin.org/get'], ['https://www.youtube.com/'], ['https://vk.com'], ['https://www.python.org/'], ['https://www.youtube.com/watch?v=xRQeXNZX_cQ']
-
-
+more_link = [['https://httpbin.org/get'], ['https://www.youtube.com/'], ['https://vk.com'], ['https://www.python.org/'], ['https://www.youtube.com/watch?v=xRQeXNZX_cQ']]
+# j = ','.join(more_link[0:1])
+# print(more_link[1:4])
 def get_html(link):
   respone = requests.get(link)
-  return print(respone.text)
+  return respone.text
 
 
 thread1 = Thread(target=get_html, args=more_link[0])
@@ -29,8 +29,10 @@ thread3.join()
 thread4.join()
 thread5.join()
 
+print(f'Время параллельного запуска {time.time()-t1}')
 
-print(time.time()-t1)
 t2 = time.time()
-get_html('https://httpbin.org/get')
-print(time.time()-t2)
+for i in more_link:
+  j = "".join(i)
+  get_html(j)
+print(f'Время последовательного запуска {time.time()-t2}')
